@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter for Bauni Vinita</title>
+    <style>
+        body {
+            background-color: #f5e6cc;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #envelope {
+            width: 300px;
+            height: 200px;
+            background: beige;
+            position: relative;
+            margin: 50px auto;
+            border: 2px solid #b38b6d;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #seal {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        #cat-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cat-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        #letter, #videoSlide {
+            display: none;
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border: 2px solid #b38b6d;
+            border-radius: 10px;
+        }
+        #next-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff6961;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        video {
+            width: 300px;
+            border: 2px solid #b38b6d;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cat-images">
+        <img src="https://placekitten.com/100/100" alt="Cute Cat 1" class="cat-img">
+        <img src="https://placekitten.com/101/100" alt="Cute Cat 2" class="cat-img">
+        <img src="https://placekitten.com/102/100" alt="Cute Cat 3" class="cat-img">
+    </div>
+
+    <div id="envelope" onclick="openLetter()">
+        <div id="seal"></div>
+    </div>
+
+    <div id="letter">
+        <p>
+            <strong>Bauni Vinita~</strong><br><br>
+            Abhi bhi naraz hai kya rey🥹 mujpe sowwy rey muje nhi Krna chaiye tha vaise tere sai baat karne kai behkaw mai kuch bb bakdiya and I'm gonna own it meri galti thi jo rulaya tuje shouldnt have done that aage sai aisa paka nahi hoga my responsibility ye ek baar maaf krde pencho ye letter tuje physically bhejne kai liye address hin nhi pata😋.chal ab sorry ra maaf karde🥹🥹🥹<br><br>
+            Whtvr jo bhi mai tuje lagta:batman
+        </p>
+        <p><em>Press "Enter" or tap "Next" for the next slide</em></p>
+    </div>
+
+    <button id="next-btn" onclick="nextSlide()">Next</button>
+
+    <div id="videoSlide">
+        <p>Embarrassing 🥲🫣</p>
+        <video id="video" controls>
+            <source src="VID_20250317_021849_852.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        let step = 0;
+        
+        function openLetter() {
+            document.getElementById("envelope").style.display = "none";
+            document.getElementById("letter").style.display = "block";
+            document.getElementById("next-btn").style.display = "block";
+            step = 1;
+        }
+
+        function nextSlide() {
+            if (step === 1) {
+                document.getElementById("letter").style.display = "none";
+                document.getElementById("videoSlide").style.display = "block";
+                document.getElementById("next-btn").style.display = "none";
+                step = 2;
+            }
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                nextSlide();
+            }
+        });
+    </script>
+
+</body>
+</html>
